@@ -57,6 +57,11 @@ from Javascript ES6 to Javascript ES5.
 
 The build will re-run everytime you update your source.  
 
+To View the Project
+
+	navigate to test-app/react_app.html
+	open html file in browser
+
 Props for the component
 
 Pass it an array of objects that map to vendors that map to an array of sold items which map to item information. 
