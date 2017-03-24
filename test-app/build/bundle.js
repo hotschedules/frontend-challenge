@@ -40398,7 +40398,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 if (takenItems[product.name] === undefined) {
                   topItems.push({
                     name: product.name,
-                    revenue: product.order_count * (product.vendor_price.value / product.vendor_price.scale)
+                    revenue: product.order_count * (product.vendor_price.value / product.vendor_price.scale),
+                    count: product.order_count
                   });
                   takenItems[product.name] = true;
                 }
@@ -40406,7 +40407,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             });
 
             topItems.sort(function (a, b) {
-              return Number(b.revenue) - Number(a.revenue);
+              return Number(b.order_count) - Number(a.order_count);
             });
             this.setState({
               listItems: topItems.slice(0, 10)
@@ -40425,7 +40426,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center'
-                } }, i)), _react2.default.createElement('div', { style: { width: '83%', height: '44px', borderTop: '1px solid #cccccc', display: 'flex', flexDirection: 'column', justifyContent: 'center' } }, _react2.default.createElement('div', { style: { fontSize: '14px' } }, item.name), _react2.default.createElement('div', { style: { marginTop: '4px', fontSize: '10px', color: '#cccccc' } }, '$', item.revenue)));
+                } }, i + 1)), _react2.default.createElement('div', { style: { width: '83%', height: '44px', borderTop: '1px solid #cccccc', display: 'flex', flexDirection: 'column', justifyContent: 'center' } }, _react2.default.createElement('div', { style: { fontSize: '14px' } }, item.name), _react2.default.createElement('div', { style: { marginTop: '4px', fontSize: '10px', color: '#cccccc' } }, '$', item.revenue)));
             });
             return _react2.default.createElement('div', { style: { justifyContent: 'center', alignItems: 'center', width: '40%', paddingBottom: '20px', border: '1px solid #cccccc' } }, _react2.default.createElement('div', { style: { fontSize: '16px', margin: '10px 0 30px 10px' } }, 'Top Sales Items'), items);
           }

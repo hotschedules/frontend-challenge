@@ -16,14 +16,15 @@ class TopSalesList extends React.Component  {
                 if(takenItems[product.name] === undefined){
                     topItems.push({
                         name: product.name,
-                        revenue:  product.order_count * (product.vendor_price.value / product.vendor_price.scale)
+                        revenue:  product.order_count * (product.vendor_price.value / product.vendor_price.scale),
+                        count: product.order_count
                     })
                     takenItems[product.name] = true;
                 }
             })
         })
         
-        topItems.sort((a,b) => Number(b.revenue) - Number(a.revenue) )
+        topItems.sort((a,b) => Number(b.order_count) - Number(a.order_count) )
         this.setState({
             listItems: topItems.slice(0,10)
         })
@@ -41,7 +42,7 @@ class TopSalesList extends React.Component  {
                         display: 'flex', 
                         alignItems: 'center', 
                         justifyContent: 'center'
-                    }}>{i}</div>
+                    }}>{i + 1}</div>
                 </div>
                 <div style={{ width: '83%', height: '44px', borderTop: '1px solid #cccccc', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
                     <div style={{fontSize: '14px' }}>{item.name}</div>
