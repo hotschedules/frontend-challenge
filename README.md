@@ -71,40 +71,40 @@ The VendorList specified ^ will be referred to as {VENDORDATA} from now on.
 
 For React
 
-	```
+	
 	import TopSalesList from ./{PATH}/top-sales-list/top-sales.component.js
 	ReactDOM.render(<TopSalesList vendors={ {VENDORDATA} }/>, document.getElementById('app'));
-	```
 
 For  jQuery
 
-	Add script to the component's dom rendering function from {Path}/top-sales-list/jQueryFunction in your HTML page
+Add script to the component's dom rendering function from {Path}/top-sales-list/jQueryFunction in your HTML page
 	`<script src="./{Path}/top-sales-list/jQueryFunction.js"></script>`
 
-	Create a HTML container for the component
+Create a HTML container for the component
 
 	`var listContainer = $('<span class="list-container"></span>');`
 
-	Then Call the component's dom rendering function
+Then Call the component's dom rendering function
 
-	```
+	
 	import RenderTopSales from './{PATH}/RenderTopSales'
 	RenderTopSales(vendors, listContainer);
-	```
+	
 
 For Angular
 
 	`npm i --save ngreact`
-	look up the docs at https://github.com/ngReact/ngReact for general clarification on the module
+look up the docs at https://github.com/ngReact/ngReact for general clarification on the module
 
-	Include the 'react' Angular module in your html index file
+Include the 'react' Angular module in your html index file
+
 	```
 	<script>
     angular.module('app', ['react']);
 	</script>
 	```
 
-	Use with 'react-component' Directive
+Use with 'react-component' Directive
 
 	```
 	angular.module('app', ['react'])
@@ -113,7 +113,7 @@ For Angular
   });
 	```
 
-	Usage with the TopSalesList component
+Usage with the TopSalesList component
 
 	```
 	import TopSalesList from ./{PATH}/top-sales-list/top-sales.component.js
