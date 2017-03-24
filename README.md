@@ -64,13 +64,13 @@ The path should look as follows
 VendorList -> Vendor -> Items -> Item -> ItemInformation
 The VendorList specified ^ will be referred to as {VENDORDATA} from now on.
 
-*For React*
+##For React
 
 	
 	import TopSalesList from ./{PATH}/top-sales-list/top-sales.component.js
 	ReactDOM.render(<TopSalesList vendors={ {VENDORDATA} }/>, document.getElementById('app'));
 
-*For  jQuery*
+##For  jQuery
 
 Add script to the component's dom rendering function from {Path}/top-sales-list/jQueryFunction in your HTML page
 	`<script src="./{Path}/top-sales-list/jQueryFunction.js"></script>`
@@ -86,7 +86,7 @@ Then Call the component's dom rendering function
 	RenderTopSales(vendors, listContainer);
 	
 
-*For Angular*
+##For Angular
 
 	npm i --save ngreact
 look up the docs at https://github.com/ngReact/ngReact for general clarification on the module
