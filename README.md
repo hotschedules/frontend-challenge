@@ -1,13 +1,5 @@
 # HotSchedules Front-end Engineering Challenge
 
-## Narrative 
-
-After realizing the user experience of their application suite is disjointed, shadowy upper-management figures
-have bestowed the task of unifying them to you! You have decided there can only be one solution: you must build
-a component library! The complexity grows as you ponder the problem; the Russian team uses Angular.js for their app,
-the Columbian team uses React.js for theirs, and the hipster dev team in SF decided to use nothing but jQuery. How will
-you form a comprimise to pacify all the share holders??? 
-
 ## Task
 
 Though the execs want to see a full fledged library completed by end of quarter, they really just need to get one
