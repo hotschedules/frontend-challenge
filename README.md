@@ -59,7 +59,7 @@ The build will re-run everytime you update your source. To view the Project navi
 
 Props for the component
 
-Pass it an array of objects that map to vendors that map to an array of sold items which map to item information. 
+Pass the component its venders through a prop called 'vendors'. 'vendors' should be an array of objects that each map to  a vendor that map to an array of sold items which map to item information. 
 The path should look as follows 
 VendorList -> Vendor -> Items -> Item -> ItemInformation
 The VendorList specified ^ will be referred to as {VENDORDATA} from now on.
@@ -113,7 +113,7 @@ Usage with the TopSalesList component
 	import TopSalesList from ./{PATH}/top-sales-list/top-sales.component.js
 	app.value('listComponent', <TopSalesList vendors={$scope.vendors} /> );
 
-	Angular view
+Angular view
 
 	<body ng-app="app">
 		<div ng-controller="listController">
@@ -121,10 +121,10 @@ Usage with the TopSalesList component
 		</div>
 	</body>
 
-	as the ngreact docs state...
+as the ngreact docs state...
 
-	name attribute checks for an Angular injectable of that name and falls back to a globally exposed variable of the same name
-	props attribute indicates what scope properties should be exposed to the React component
-	watch-depth attribute indicates what watch strategy to use to detect changes on scope properties. The possible values for react-component are reference, collection and value (default)
+name attribute checks for an Angular injectable of that name and falls back to a globally exposed variable of the same name
+props attribute indicates what scope properties should be exposed to the React component
+watch-depth attribute indicates what watch strategy to use to detect changes on scope properties. The possible values for react-component are reference, collection and value (default)
 
 Enjoy!
