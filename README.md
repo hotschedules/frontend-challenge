@@ -2,23 +2,20 @@
 
 ## Task
 
-Though the execs want to see a full fledged library completed by end of quarter, they really just need to get one
-component released to production for all the apps ASAP to apease a large customer. Typical. The component in question is 
-a list which displays a customer's top selling items. Your job will be to create the component, keeping in mind it has to work
-in a variety of environments.
+Your job will be to create a component that is usuable in React, jQuery, and Angular
 
-Your product manager provides you with the requirements:
+Component requirements:
 
 1. Display the top 10 selling products in order from most sold to least. 
 2. Display the revenue of each product.
 
-Your star designer provides you with awesome mocks:
+Your awesome mocks for the component:
 
 [Mocks](https://drive.google.com/file/d/0B7KmJIsOVjr6YTcwMC11bTBnVGs/view?usp=sharing)
 
 (Don't stress on being pixel perfect.)
 
-Your backend team exposes an api:
+The backend team exposes an api:
 
 * The route '/PurchaseOrders' returns the latest PurchaseOrders
 * Each PurchaseOrder has an array of products PurchaseOrder.products
@@ -35,7 +32,7 @@ the scale property holds the exponent of 10 by which to divide the value propert
 
 Clone this repo.
 
-`git clone git@bitbucket.org:redbookplatform/frontend-challenge.git`
+`git clone https://github.com/15chrjef/frontend-challenge/`
 
 Install. Set up npm if needed (http://blog.teamtreehouse.com/install-node-js-npm-mac).
 
@@ -60,10 +57,18 @@ from Javascript ES6 to Javascript ES5.
 
 The build will re-run everytime you update your source.  
 
-Write the TopSalesList component in 'src/top-sales-list'.
+For use of the component in React
 
-You can write a utility function to help transform the data from the server to a format more
-conducive to your component if needed in 'src/utils/'.
+Pass it an array of objects that map to vendors that map to an array of sold items which map to item information. 
+The path should look as follows 
+VendorList -> Vendor -> Items -> Item -> ItemInformation
 
+For React
 
+``
+import TopSalesList from {PATH}/top-sales-list/top-sales.component.js
+ReactDOM.render(<TopSalesList vendors={ {VENDORDATA} }/>, document.getElementById('app'));
+``
+
+For Use in Jquery
 
