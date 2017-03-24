@@ -55,12 +55,7 @@ from Javascript ES6 to Javascript ES5.
 
 `npm run build`
 
-The build will re-run everytime you update your source.  
-
-To View the Project
-
-	navigate to test-app/react_app.html
-	open html file in browser
+The build will re-run everytime you update your source. To view the Project navigate to test-app/react_app.html open html file in browser.
 
 Props for the component
 
@@ -69,20 +64,20 @@ The path should look as follows
 VendorList -> Vendor -> Items -> Item -> ItemInformation
 The VendorList specified ^ will be referred to as {VENDORDATA} from now on.
 
-For React
+*For React*
 
 	
 	import TopSalesList from ./{PATH}/top-sales-list/top-sales.component.js
 	ReactDOM.render(<TopSalesList vendors={ {VENDORDATA} }/>, document.getElementById('app'));
 
-For  jQuery
+*For  jQuery*
 
 Add script to the component's dom rendering function from {Path}/top-sales-list/jQueryFunction in your HTML page
 	`<script src="./{Path}/top-sales-list/jQueryFunction.js"></script>`
 
 Create a HTML container for the component
 
-	`var listContainer = $('<span class="list-container"></span>');`
+	var listContainer = $('<span class="list-container"></span>');
 
 Then Call the component's dom rendering function
 
@@ -91,44 +86,36 @@ Then Call the component's dom rendering function
 	RenderTopSales(vendors, listContainer);
 	
 
-For Angular
+*For Angular*
 
-	`npm i --save ngreact`
+	npm i --save ngreact
 look up the docs at https://github.com/ngReact/ngReact for general clarification on the module
 
 Include the 'react' Angular module in your html index file
 
-	```
 	<script>
     angular.module('app', ['react']);
 	</script>
-	```
 
 Use with 'react-component' Directive
 
-	```
 	angular.module('app', ['react'])
   .controller('listController', function($scope) {
     $scope.vendors = {VENDORDATA};
   });
-	```
 
 Usage with the TopSalesList component
 
-	```
 	import TopSalesList from ./{PATH}/top-sales-list/top-sales.component.js
 	app.value('listComponent', <TopSalesList vendors={$scope.vendors} /> );
-	```
 
 	Angular view
 
-	```
 	<body ng-app="app">
 		<div ng-controller="listController">
 			<react-component name="listComponent" props="vendors" watch-depth="reference"/>
 		</div>
 	</body>
-	```
 
 	as the ngreact docs state...
 
