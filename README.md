@@ -57,18 +57,78 @@ from Javascript ES6 to Javascript ES5.
 
 The build will re-run everytime you update your source.  
 
-For use of the component in React
+Props for the component
 
 Pass it an array of objects that map to vendors that map to an array of sold items which map to item information. 
 The path should look as follows 
 VendorList -> Vendor -> Items -> Item -> ItemInformation
+The VendorList specified ^ will be referred to as {VENDORDATA} from now on.
 
 For React
 
-``
-import TopSalesList from {PATH}/top-sales-list/top-sales.component.js
-ReactDOM.render(<TopSalesList vendors={ {VENDORDATA} }/>, document.getElementById('app'));
-``
+	```
+	import TopSalesList from ./{PATH}/top-sales-list/top-sales.component.js
+	ReactDOM.render(<TopSalesList vendors={ {VENDORDATA} }/>, document.getElementById('app'));
+	```
 
-For Use in Jquery
+For  jQuery
 
+	Add script to the component's dom rendering function from {Path}/top-sales-list/jQueryFunction in your HTML page
+	`<script src="./{Path}/top-sales-list/jQueryFunction.js"></script>`
+
+	Create a HTML container for the component
+
+	`var listContainer = $('<span class="list-container"></span>');`
+
+	Then Call the component's dom rendering function
+
+	```
+	import RenderTopSales from './{PATH}/RenderTopSales'
+	RenderTopSales(vendors, listContainer);
+	```
+
+For Angular
+
+	`npm i --save ngreact`
+	look up the docs at https://github.com/ngReact/ngReact for general clarification on the module
+
+	Include the 'react' Angular module in your html index file
+	```
+	<script>
+    angular.module('app', ['react']);
+	</script>
+	```
+
+	Use with 'react-component' Directive
+
+	```
+	angular.module('app', ['react'])
+  .controller('listController', function($scope) {
+    $scope.vendors = {VENDORDATA};
+  });
+	```
+
+	Usage with the TopSalesList component
+
+	```
+	import TopSalesList from ./{PATH}/top-sales-list/top-sales.component.js
+	app.value('listComponent', <TopSalesList vendors={$scope.vendors} /> );
+	```
+
+	Angular view
+
+	```
+	<body ng-app="app">
+		<div ng-controller="listController">
+			<react-component name="listComponent" props="vendors" watch-depth="reference"/>
+		</div>
+	</body>
+	```
+
+	as the ngreact docs state...
+
+	name attribute checks for an Angular injectable of that name and falls back to a globally exposed variable of the same name
+	props attribute indicates what scope properties should be exposed to the React component
+	watch-depth attribute indicates what watch strategy to use to detect changes on scope properties. The possible values for react-component are reference, collection and value (default)
+
+Enjoy!
