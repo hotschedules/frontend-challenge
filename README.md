@@ -99,10 +99,14 @@ Include the 'react' Angular module in your html index file
 
 Use with 'react-component' Directive
 
-	angular.module('app', ['react'])
-  .controller('listController', function($scope) {
-    $scope.vendors = {VENDORDATA};
-  });
+```
+angular.module('app', ['react'])
+.controller('listController', 
+	function($scope) { 
+		$scope.vendors = {VENDORDATA};
+	}
+);
+```
 
 Usage with the TopSalesList component
 
